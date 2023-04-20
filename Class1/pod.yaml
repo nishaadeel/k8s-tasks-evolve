@@ -6,6 +6,8 @@ metadata:
   name: nginx
   labels: 
     app: demo
+  annotations:
+    created_by: "devops"
 spec:
   nodeSelector:
     topology.kubernetes.io/zone: us-central1-c
@@ -14,7 +16,5 @@ spec:
     image: nginx:1.14.2
     ports:
     - containerPort: 80
-
-
 
 # kubectl  apply -f pod.yaml 
