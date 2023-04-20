@@ -57,6 +57,8 @@ metadata:
   annotations:
     created_by: "devops"
 spec:
+  imagePullSecrets:
+  - name: regcred
   nodeSelector:
     topology.kubernetes.io/zone: us-central1-c
   containers:
