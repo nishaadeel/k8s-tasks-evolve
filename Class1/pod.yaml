@@ -6,6 +6,8 @@ metadata:
   labels: 
     app: demo
 spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-central1-c
   containers:
   - name: nginx
     image: nginx:1.14.2
