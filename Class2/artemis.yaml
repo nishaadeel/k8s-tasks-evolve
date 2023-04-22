@@ -32,6 +32,9 @@ spec:
       httpGet: null
       tcpSocket:
         port: 5000
-
+  - name: redis
+    image: redis:latest
+    ports:
+    - containerPort: 6379
 
 # kubectl apply -f artemis.yaml 
