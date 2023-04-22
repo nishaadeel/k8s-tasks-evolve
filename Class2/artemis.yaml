@@ -1,0 +1,37 @@
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: artemis
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  containers:
+  - name: artemis
+    image: farrukhsadykov/artemis:latest
+    ports:
+    - containerPort: 80
+    readinessProbe:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 80
+    livenessProbe:
+      initialDelaySeconds: 60
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 80
+
+
+# kubectl apply -f artemis.yaml 
