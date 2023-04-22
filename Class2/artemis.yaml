@@ -36,5 +36,24 @@ spec:
     image: redis:latest
     ports:
     - containerPort: 6379
+    livenessProbe:
+      initialDelaySeconds: 120
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 6379
+    readinessProbe:
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
+        port: 6379
 
+        
 # kubectl apply -f artemis.yaml 
