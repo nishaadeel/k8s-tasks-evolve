@@ -13,7 +13,7 @@ spec:
   - name: artemis
     image: farrukhsadykov/artemis:latest
     ports:
-    - containerPort: 80
+    - containerPort: 5000
     readinessProbe:
       initialDelaySeconds: 30
       periodSeconds: 10
@@ -22,7 +22,7 @@ spec:
       successThreshold: 1
       httpGet: null
       tcpSocket:
-        port: 80
+        port: 5000
     livenessProbe:
       initialDelaySeconds: 60
       periodSeconds: 10
@@ -31,7 +31,7 @@ spec:
       successThreshold: 1
       httpGet: null
       tcpSocket:
-        port: 80
+        port: 5000
 
 
 # kubectl apply -f artemis.yaml 
