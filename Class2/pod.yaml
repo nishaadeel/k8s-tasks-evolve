@@ -16,5 +16,5 @@ spec:
     - containerPort: 80
     readinessProbe:
       httpGet:
-        path: /status.txt 
+        path: /
         port: 80
