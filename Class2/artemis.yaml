@@ -1,5 +1,7 @@
 ---
 # https://kubernetes.io/docs/concepts/workloads/pods/
+# https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/#:~:text=Each%20container%20has%20a%20limit,CPU%20and%20256MiB%20of%20memory.
+# https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 apiVersion: v1
 kind: Pod
 metadata:
