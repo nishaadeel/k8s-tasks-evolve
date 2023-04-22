@@ -1,0 +1,70 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: development
+  
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: python
+  name: nginx
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-central1-c
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: java
+  name: java
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  nodeSelector:
+    topology.kubernetes.io/zone: us-central1-c
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: nodejs
+  name: nodejs
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  imagePullSecrets:
+  - name: regcred
+  nodeSelector:
+    topology.kubernetes.io/zone: us-central1-c
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+    ports:
+    - containerPort: 80
+
+# kubectl  apply -f pod.yaml 
