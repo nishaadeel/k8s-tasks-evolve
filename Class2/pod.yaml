@@ -15,6 +15,11 @@ spec:
     ports:
     - containerPort: 80
     readinessProbe:
-      httpGet:
-        path: /
+      initialDelaySeconds: 30
+      periodSeconds: 10
+      timeoutSeconds: 5
+      failureThreshold: 6
+      successThreshold: 1
+      httpGet: null
+      tcpSocket:
         port: 80
