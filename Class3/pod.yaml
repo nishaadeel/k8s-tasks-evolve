@@ -1,0 +1,48 @@
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx1
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx2
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+
+
+---
+# https://kubernetes.io/docs/concepts/workloads/pods/
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx3
+  labels: 
+    app: demo
+  annotations:
+    created_by: "devops"
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.14.2
+
+    
+    
