@@ -4,6 +4,8 @@ metadata:
   name: hello
 spec:
   schedule: "* * * * sun"
+  successfulJobsHistoryLimit: 0       # remove when pod done performing task
+  failedJobsHistoryLimit: 0           # remove when pod done performing task
   jobTemplate:
     spec:
       template:
