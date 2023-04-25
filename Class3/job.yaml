@@ -14,4 +14,4 @@ spec:
         command: ["terraform",  "fmt"]
       restartPolicy: Never
   backoffLimit: 4
-
+  ttlSecondsAfterFinished: 1
