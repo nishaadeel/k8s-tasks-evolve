@@ -5,7 +5,7 @@ metadata:
     name: kuard-rs-test
   name: kuard-rs-test
 spec:
-  replicas: 1
+  replicas: 1  
   selector:
     matchLabels:
       app: kuard-rs-test-pod
@@ -19,4 +19,4 @@ spec:
         name: kuard
         resources:
           requests:
-            cpu: 500m
+            cpu: 200m
