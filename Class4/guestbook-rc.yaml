@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: guestbook-rc
+spec:
+  # modify replicas according to your case
+  replicas: 5
+  selector:
+    tier: frontend
+    type: rc
+  template:
+    metadata:
+      labels:
+        tier: frontend
+        type: rc
+    spec:
+      containers:
+      - name: php-redis
+        image: gcr.io/google_samples/gb-frontend:v3
