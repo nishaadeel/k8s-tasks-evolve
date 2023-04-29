@@ -1,13 +1,13 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: nginx-nodeport-svc
+  name: nginx-lb-svc
 spec:
   ports:
-  - port: 8888
-    nodePort: 31798
+  - port: 80
+    nodePort: 30090
     targetPort: 80
   selector:
     label: dev
-  type: NodePort
+  type: LoadBalancer
   externalTrafficPolicy: Local
