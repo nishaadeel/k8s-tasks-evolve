@@ -14,5 +14,5 @@ spec:
         app: web-app-deploy
     spec:
       containers:
-      - image: ikambarov/web-app:1.0.0
+      - image: ikambarov/web-app:1.0.1
         name: web-app
