@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    run: centos-nobody-pod
+  name: centos-nobody-pod
+spec:
+  securityContext:
+    runAsUser: 65534
+    runAsGroup: 65534
+    fsGroup: 65534
+  containers:
+  - image: centos:7
+    args:
+    - sleep
+    - "1000000"
+    name: centos
