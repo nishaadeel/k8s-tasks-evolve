@@ -1,0 +1,6 @@
+image: "ikambarov/flaskex"
+tag: "def0e2607f08ca2369f6bb9447c3f01d302a90a7"
+replicas: 2
+serviceType: "NodePort"
+servicePort: 5000
+podPort: 5000
