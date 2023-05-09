@@ -1,0 +1,6 @@
+image: "ikambarov/flaskex"
+tag: "latest"
+replicas: 1
+serviceType: "LoadBalancer"
+servicePort: 80
+podPort: 5000
